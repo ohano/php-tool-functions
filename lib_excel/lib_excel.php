@@ -2,7 +2,7 @@
 
 include './PHPExcel/PHPExcel.php';
 
-function createXML($xml_upload_goods,$file_name,$title='上传',$is_twoD_arr=false , $is_download=true)
+function createObjData($xml_upload_goods,$file_name,$title='上传',$is_twoD_arr=false , $is_download=true)
 {
     $xml_index = array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','AA','AB','AC','AD','AE','AF','AG','AH','AI','AJ','AK','AL','AM','AN','AO','AP','AQ','AR','AS','AT','AU','AV','AW','AX','AY','AZ','BA','BB','BC','BD','BE','BF','BG');
     // 生成新的excel对象
@@ -49,3 +49,18 @@ function objWriterOutput($objPHPExcel, $file_name ,$is_download=true)
     }
 
 }
+
+
+//demo
+$filed_arr = array('0'=>"会员名称",'1'=>"会员昵称",'2'=>"手机",'3'=>"积分",'4'=>"注册日期");
+$export_arr[] = $filed_arr;
+foreach ($user_list['user_list'] as $k => $v) {
+  $temp_arr = array();
+  $temp_arr['0'] = $v['user_name'];
+  $temp_arr['1'] = $v['real_name'];
+  $temp_arr['2'] = $v['mobile_phone'];
+  $temp_arr['3'] = $v['pay_points'];
+  $temp_arr['4'] = $v['reg_time'];
+  $export_arr[] = $temp_arr;
+}
+createObjData($export_arr,"user_list",'',true);

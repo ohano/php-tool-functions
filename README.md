@@ -3,4 +3,4 @@
 
 
 
-lib_excel：利用PHPExcel导出excel文件
+lib_excel：利用PHPExcel导出，导入excel文件

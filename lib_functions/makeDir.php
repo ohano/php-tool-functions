@@ -8,7 +8,7 @@
  * @param       string      folder     目录路径。不能使用相对于网站根目录的URL
  * @return      bool
  */
-function make_dir($folder)
+function makeDir($folder)
 {
     $reval = false;
 

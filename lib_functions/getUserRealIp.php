@@ -6,7 +6,7 @@
  * @access  public
  * @return  string
 */
- function real_ip() { 
+ function getUserRealIp() { 
 
     static $realip = NULL;
     if ($realip !== NULL) {
